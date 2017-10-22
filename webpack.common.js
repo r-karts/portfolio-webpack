@@ -1,7 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -9,19 +8,6 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.scss$/,
-            use: [
-                'style-loader',
-                'css-loader',
-                'sass-loader'
-            ]
-        }, {
-            test: /\.css$/,
-            use: [
-                'style-loader',
-                'css-loader'
-            ]
-        }, {
             test: /\.js$/,
             loader: "babel-loader", exclude: /node_modules/,
             query: {
@@ -53,5 +39,4 @@ module.exports = {
             path:
                 path.resolve(__dirname, 'dist')
         }
-}
-;
+};

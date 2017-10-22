@@ -3,7 +3,7 @@
 
 $header-font: 'Raleway', sans-serif;
 $button-font: 'Oswald', sans-serif;
-$font-size: 20px;
+$font-size: 16px;
 $half-font-size: $font-size / 2;
 $left-tile-margin: 40%;
 $max-width-of-logo-text: 800px;
@@ -16,7 +16,7 @@ $text-margin: 3%;
 
 html, body, .app {
   height: 100%;
-  font-style: $font-size;
+  font-size: $font-size;
 }
 
 .tile {
@@ -58,7 +58,7 @@ html, body, .app {
   text-shadow: 0 0 1px $bright-color;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(#000, 0);
 }
 
 .btn:hover {

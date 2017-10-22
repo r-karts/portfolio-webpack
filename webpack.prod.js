@@ -18,6 +18,29 @@ module.exports = merge(common, {
                     collapseWhitespace: true
                 }
             }
+        }, {
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                {
+                    loader: 'css-loader',
+                    options: {
+                        minimize: true
+                    }
+                }
+            ]
+        }, {
+            test: /\.scss$/,
+            use: [
+                'style-loader',
+                {
+                    loader: 'css-loader',
+                    options: {
+                        minimize: true
+                    }
+                },
+                'sass-loader'
+            ]
         }]
     },
     plugins: [
