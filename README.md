@@ -2,9 +2,10 @@
 
 [![travis status](https://travis-ci.org/r-karts/portfolio-webpack.svg?branch=master)](https://travis-ci.org/r-karts/portfolio-webpack)
 
-Website hosted on google cloud platform: [link](https://roman-kartsevich.appspot.com/)
+### [Website](https://roman-kartsevich.appspot.com/)
 
-My personal portfolio. Built with webpack.
+My personal portfolio. Built with webpack. Deployed on google cloud
+platform inside of a docker container.
 
 # Pre-requisites
 
