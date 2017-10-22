@@ -1,6 +1,6 @@
 # Portfolio Webpack
 
-![travis status](https://travis-ci.org/r-karts/portfolio-webpack.svg?branch=master)
+[![travis status](https://travis-ci.org/r-karts/portfolio-webpack.svg?branch=master)](https://travis-ci.org/r-karts/portfolio-webpack)
 
 My personal portfolio. Built with webpack.
 
