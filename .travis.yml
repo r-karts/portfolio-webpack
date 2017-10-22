@@ -7,6 +7,5 @@ cache:
 before_script:
 - "npm install -g npm"
 script:
-- "npm install"
 - "npm run build-dev"
 - "npm run build"
