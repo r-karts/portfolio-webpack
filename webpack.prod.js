@@ -15,7 +15,7 @@ module.exports = merge(common, {
                 options: {
                     minimize: true,
                     removeComments: true,
-                    collapseWhitespace: false
+                    collapseWhitespace: true
                 }
             }
         }]
