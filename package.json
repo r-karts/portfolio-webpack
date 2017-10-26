@@ -2,10 +2,15 @@
   "name": "portfolio-webpack",
   "version": "1.0.0",
   "description": "My personal portfolio",
+  "engines": {
+    "node": "8.x.x",
+    "npm": "5.x.x"
+  },
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "build-dev": "webpack --config webpack.dev.js"
+    "build-dev": "webpack --config webpack.dev.js",
+    "start-prod": "webpack-dev-server --open --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
