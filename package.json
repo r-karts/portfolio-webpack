@@ -10,7 +10,7 @@
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "build-dev": "webpack --config webpack.dev.js",
-    "start-prod": "webpack-dev-server --open --config webpack.prod.js"
+    "start-prod": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -41,5 +41,8 @@
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3",
     "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
   }
 }

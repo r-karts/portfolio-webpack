@@ -66,3 +66,28 @@ gcloud app deploy
 
 Follow the instructions and setup all necessary stuff: account, host location, etc. on the fly.
 
+## Heroku
+
+It's also heroku-ready.
+
+```console
+heroku login
+heroku create
+heroku config:set NPM_CONFIG_PRODUCTION=false
+git push heroku master
+```
+
+Local running:
+
+_Note:_ you also can create `.env` file and specify there something like:
+
+```properties
+PORT=8080
+NPM_CONFIG_PRODUCTION=false
+```
+
+Local deployment command:
+
+```console
+heroku local web
+```
