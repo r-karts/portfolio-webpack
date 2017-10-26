@@ -2,7 +2,7 @@
 
 [![travis status](https://travis-ci.org/r-karts/portfolio-webpack.svg?branch=master)](https://travis-ci.org/r-karts/portfolio-webpack)
 
-### [Website](https://roman-kartsevich.appspot.com/)
+### [Website](https://roman-kartsevich.herokuapp.com/)
 
 My personal portfolio. Built with webpack. Deployed on google cloud
 platform inside of a docker container.
