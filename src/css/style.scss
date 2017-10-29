@@ -5,7 +5,7 @@ $header-font: 'Raleway', sans-serif;
 $button-font: 'Oswald', sans-serif;
 $font-size: 16px;
 $half-font-size: $font-size / 2;
-$left-tile-margin: 40%;
+$left-tile-margin: 45%;
 $max-width-of-logo-text: 800px;
 $primary-color: #032035;
 $secondary-color: #033a61;
@@ -13,10 +13,12 @@ $lighter-color: #246a92;
 $bright-color: #F9F4F3;
 $header-text-boost: 200%;
 $text-margin: 3%;
+$bottom-border-nav-link : 4px;
 
 html, body, .app {
   height: 100%;
   font-size: $font-size;
+  background: url("../img/background.jpg") no-repeat fixed;
 }
 
 .tile {
@@ -25,13 +27,13 @@ html, body, .app {
   margin: auto;
   display: table;
   top: 0;
-  background: url("../img/logo.jpg") no-repeat 50% 50%;
+  //background: url("../img/logo.jpg") no-repeat 50% 50%;
   background-size: cover;
 }
 
 .tile .inner {
-  display: table-cell;
-  vertical-align: middle;
+  display: block;
+  margin-top: 90px;
   width: 100%;
   max-width: none;
 }
@@ -44,44 +46,61 @@ html, body, .app {
 }
 
 .content h1 {
+  margin-top: 0px;
   font-family: $header-font;
   color: $bright-color;
   text-shadow: 0 0 300px #000;
-}
-
-.btn {
-  border-radius: $half-font-size;
-  padding: $half-font-size $font-size;
-  font-family: $button-font;
-  color: $primary-color;
-  border: solid $primary-color 3px;
-  text-shadow: 0 0 1px $bright-color;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: rgba(#000, 0);
-}
-
-.btn:hover {
-  color: $bright-color;
-  border: solid $bright-color 3px;
-  text-shadow: 0 0 0 #000;
 }
 
 p {
   font-size: 130%;
   line-height: 130%;
   text-align: justify;
-  margin: $text-margin;
+  //margin: $text-margin;
 }
 
 @media screen and (max-width: 768px) {
 
   .content h1 {
-    font-size: 130%;
+    font-size: 100%;
+  }
+}
+
+#nav-bar {
+  position: fixed;
+  width : 100%;
+  opacity: 1;
+
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+#navbarNav {
+  justify-content: flex-end;
+  margin-right: 100px;
+
+  li {
+    margin-right: 50px;
   }
 
-  .btn {
-    font-size: 70%;
-    padding: $half-font-size $half-font-size;
-  }
+
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size : larger;
+  font-weight: 400;
+  color: black;
+
+
+}
+
+.active{
+  border-bottom: $bottom-border-nav-link solid #f04;
+}
+
+
+section {
+  background: ghostwhite;
 }
