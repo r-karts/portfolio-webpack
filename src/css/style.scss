@@ -13,7 +13,7 @@ $lighter-color: #246a92;
 $bright-color: #F9F4F3;
 $header-text-boost: 200%;
 $text-margin: 3%;
-$bottom-border-nav-link : 4px;
+$bottom-border-nav-link: 4px;
 
 html, body, .app {
   height: 100%;
@@ -25,7 +25,8 @@ html, body, .app {
   width: 100%;
   height: 100%;
   margin: auto;
-  display: table;
+  display: inline-block;
+  position: relative;
   top: 0;
   //background: url("../img/logo.jpg") no-repeat 50% 50%;
   background-size: cover;
@@ -68,7 +69,7 @@ p {
 
 #nav-bar {
   position: fixed;
-  width : 100%;
+  width: 100%;
   opacity: 1;
 
 }
@@ -80,27 +81,96 @@ p {
 #navbarNav {
   justify-content: flex-end;
   margin-right: 100px;
-
   li {
     margin-right: 50px;
   }
-
-
 }
 
 .navbar-nav .nav-item .nav-link {
-  font-size : larger;
+  font-size: larger;
   font-weight: 400;
   color: black;
-
-
 }
 
-.active{
+.active {
   border-bottom: $bottom-border-nav-link solid #f04;
 }
 
-
 section {
-  background: ghostwhite;
+  background: -webkit-gradient(
+                  linear,
+                  left top,
+                  left bottom,
+                  color-stop(0%, #252627),
+                  color-stop(100%, #252627));
+  padding: 5% 6%;
+  color : #ebebeb;
+  font-family: Nunito;
+}
+
+
+.sun {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    margin: 50px;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+    display: inline-block;
+  border : 0;
+    /*закругленные углы и тень*/
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+    /*градиент*/
+    background: -webkit-gradient(
+                    linear,
+                    left top,
+                    left bottom,
+                    color-stop(0%, #e51d16),
+                    color-stop(100%, #b21203)
+    ); /* для Chrome,Safari4+ */
+    background: -webkit-linear-gradient(
+                    top,
+                    #e51d16 0%,
+                    #b21203 100%
+    ); /* для Chrome10+,Safari5.1+ */
+
+  &:before {
+    content:"";
+    width: 133%;
+    height: 118%;
+    display: block;
+    position: relative;
+    padding: 15px;
+    left: -15px;
+    top: -9px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4);
+    //background: blue;
+  }
+
+  &:after {
+    content:"";
+    width: 137%;
+    height: 137%;
+
+    display: block;
+    position: absolute;
+    padding: 20px;
+    left: -19px;
+    top: -18px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4);
+  }
+
 }
