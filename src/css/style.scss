@@ -18,7 +18,14 @@ $bottom-border-nav-link: 4px;
 html, body, .app {
   height: 100%;
   font-size: $font-size;
-  background: url("../img/background.jpg") no-repeat fixed 50% 50%;
+  background: url("../img/my_sky.png") no-repeat 50% 50%;
+}
+
+#ground img {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  z-index: 1;
 }
 
 .tile {
