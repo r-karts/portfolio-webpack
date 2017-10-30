@@ -18,7 +18,7 @@ $bottom-border-nav-link: 4px;
 html, body, .app {
   height: 100%;
   font-size: $font-size;
-  background: url("../img/background.jpg") no-repeat fixed;
+  background: url("../img/background.jpg") no-repeat fixed 50% 50%;
 }
 
 .tile {
@@ -50,7 +50,6 @@ html, body, .app {
   margin-top: 0px;
   font-family: $header-font;
   color: $bright-color;
-  text-shadow: 0 0 300px #000;
 }
 
 p {
@@ -104,45 +103,44 @@ section {
                   color-stop(0%, #252627),
                   color-stop(100%, #252627));
   padding: 5% 6%;
-  color : #ebebeb;
+  color: #ebebeb;
   font-family: Nunito;
 }
 
-
 .sun {
-    height: 100px;
-    width: 100px;
-    position: relative;
-    margin: 50px;
-    color: white;
-    text-align: center;
-    line-height: 100px;
-    display: inline-block;
-  border : 0;
-    /*закругленные углы и тень*/
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
-    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  height: 100px;
+  width: 100px;
+  position: relative;
+  margin: 50px;
+  color: white;
+  text-align: center;
+  line-height: 100px;
+  display: inline-block;
+  border: 0;
+  /*закругленные углы и тень*/
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 
-    /*градиент*/
-    background: -webkit-gradient(
-                    linear,
-                    left top,
-                    left bottom,
-                    color-stop(0%, #e51d16),
-                    color-stop(100%, #b21203)
-    ); /* для Chrome,Safari4+ */
-    background: -webkit-linear-gradient(
-                    top,
-                    #e51d16 0%,
-                    #b21203 100%
-    ); /* для Chrome10+,Safari5.1+ */
+  /*градиент*/
+  background: -webkit-gradient(
+                  linear,
+                  left top,
+                  left bottom,
+                  color-stop(0%, #e51d16),
+                  color-stop(100%, #b21203)
+  ); /* для Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+                  top,
+                  #e51d16 0%,
+                  #b21203 100%
+  ); /* для Chrome10+,Safari5.1+ */
 
   &:before {
-    content:"";
+    content: "";
     width: 133%;
     height: 118%;
     display: block;
@@ -153,12 +151,11 @@ section {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4);
-    //background: blue;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
   }
 
   &:after {
-    content:"";
+    content: "";
     width: 137%;
     height: 137%;
 
@@ -170,7 +167,45 @@ section {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4);
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
   }
 
 }
+
+#section1 img {
+  width: 200px;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.avatar{
+  height: 200px;
+  position: relative;
+  width: 200px;
+}
+
+.avatar::before,
+.avatar::after {
+  animation: pulse 2s linear infinite;
+  border: #fff solid 8px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  content: ' ';
+  height: 140%;
+  left: -20%;
+  opacity: .6;
+  position: absolute;
+  top: -20%;
+  transform: scale(0.714);
+  width: 140%;
+  z-index: 1;
+}
+

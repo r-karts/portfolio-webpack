@@ -7,3 +7,9 @@ $(".nav-item").click(function() {
     $("li.nav-item.active").removeClass("active");
     $(this).addClass('active');
 });
+
+
+$(".sun").click(function() {
+
+    console.log("check");
+});
