@@ -56,9 +56,6 @@ module.exports = merge(common, {
             jpegtran: {
                 progressive: true
             },
-            optipng: {
-                optimizationLevel: 6
-            },
             gifscale: {
                 optimizationLevel: 3
             }

@@ -20,10 +20,10 @@ html, body, .app {
 }
 
 #sky {
-  position: absolute;
-  display : block;
-  width : 100%;
-  height : 200%;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
   background: url("../img/my_sky.png") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
@@ -32,33 +32,14 @@ html, body, .app {
 
 #ground {
   position: fixed;
-  display : block;
+  display: block;
   bottom: 0;
-  width : 100%;
-  height : 100%;
+  width: 100%;
+  height: 100%;
   background: url("../img/ground.png") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
-}
-.crop {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-}
-
-.crop img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 50%;
-  min-height: 50%;
   filter: grayscale(100%) contrast(150%);
-  z-index: 2;
 }
 
 .tile {
@@ -66,8 +47,7 @@ html, body, .app {
   height: 100%;
   margin: auto;
   display: inline-block;
-  position: relative;
-  top: 0;
+  position: absolute;
   background-size: cover;
 }
 
@@ -78,19 +58,23 @@ html, body, .app {
   max-width: none;
 }
 
+.tile {
+  position: absolute;
+}
+
 .content {
   max-width: $max-width-of-logo-text;
   margin: 0 $left-tile-margin 0 auto;
   text-align: center;
   font-size: $header-text-boost;
-}
 
-.content h1 {
-  display: block;
-  margin-top: 0px;
-  font-family: $header-font;
-  color: $bright-color;
-  z-index: 4;
+  h1 {
+    display: block;
+    margin-top: 0px;
+    font-family: $header-font;
+    color: $bright-color;
+    z-index: 4;
+  }
 }
 
 p {
@@ -103,26 +87,12 @@ p {
 
   .content h1 {
     font-size: 100%;
-    color : black;
+    color: black;
     z-index: 2;
-  }
-
-  #ground img  {
-    content: url("../img/middle_ground.png");
-    position: absolute;
-    top: 0;
-    left: -30%;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    min-width: 40%;
-    min-height: 50%;
-    filter: grayscale(100%);
   }
 }
 
 #nav-bar {
-  position: fixed;
   width: 100%;
   opacity: 1;
 
@@ -162,76 +132,15 @@ section {
   font-family: Nunito;
 }
 
-.sun {
-  height: 100px;
-  width: 100px;
-  position: relative;
-  margin: 50px;
-  color: white;
-  text-align: center;
-  line-height: 100px;
-  display: inline-block;
-  border: 0;
-  /*закругленные углы и тень*/
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+#section1 {
+  display : none;
 
-  /*градиент*/
-  background: -webkit-gradient(
-                  linear,
-                  left top,
-                  left bottom,
-                  color-stop(0%, #e51d16),
-                  color-stop(100%, #b21203)
-  ); /* для Chrome,Safari4+ */
-  background: -webkit-linear-gradient(
-                  top,
-                  #e51d16 0%,
-                  #b21203 100%
-  ); /* для Chrome10+,Safari5.1+ */
-
-  &:before {
-    content: "";
-    width: 133%;
-    height: 118%;
-    display: block;
+  img {
+    width: 200px;
+    border-radius: 9999px;
     position: relative;
-    padding: 15px;
-    left: -15px;
-    top: -9px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+    z-index: 2;
   }
-
-  &:after {
-    content: "";
-    width: 137%;
-    height: 137%;
-
-    display: block;
-    position: absolute;
-    padding: 20px;
-    left: -19px;
-    top: -18px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
-  }
-
-}
-
-#section1 img {
-  width: 200px;
-  border-radius: 9999px;
-  position: relative;
-  z-index: 2;
 }
 
 @keyframes pulse {
@@ -241,7 +150,7 @@ section {
   }
 }
 
-.avatar{
+.avatar {
   height: 200px;
   position: relative;
   width: 200px;
