@@ -19,16 +19,26 @@ html, body, .app {
   font-size: $font-size;
 }
 
-#sky img {
+#sky {
   position: absolute;
-  width: 100%;
-  height: 200%;
+  display : block;
+  width : 100%;
+  height : 200%;
+  background: url("../img/my_sky.png") 100% 100% no-repeat;
+  background-size: cover;
+  background-position: center;
+
 }
 
 #ground {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  display : block;
+  bottom: 0;
+  width : 100%;
+  height : 100%;
+  background: url("../img/ground.png") 100% 100% no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .crop {
   position: fixed;
@@ -109,7 +119,6 @@ p {
     min-height: 50%;
     filter: grayscale(100%);
   }
-
 }
 
 #nav-bar {
