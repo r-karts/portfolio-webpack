@@ -17,17 +17,38 @@ $bottom-border-nav-link: 4px;
 
 html, body, .app {
   font-size: $font-size;
+  width: 100%;
+  height: 100%;
+  padding : 0;
+  margin: 0;
+}
+
+.app {
+  //position: absolute;
 }
 
 #sky {
-  position: absolute;
-  display : block;
-  width : 100%;
-  height : 200%;
+  //position: relative;
+  //display : block;
+  //top: 0px;
+  //left: 0px;
+  //right: 0px;
+  //bottom: 0px;
+  //width : 100%;
+  //height : 190%;
   background: url("../img/my_sky.png") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
 
+}
+
+#back {
+  display: none;
+  //position: absolute;
+  background: black;
+  width : 100%;
+  height : 100%;
+  z-index: 100;
 }
 
 #ground {
@@ -39,6 +60,7 @@ html, body, .app {
   background: url("../img/ground.png") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
+  z-index: 0;
 }
 .crop {
   position: fixed;
@@ -62,11 +84,12 @@ html, body, .app {
 }
 
 .tile {
+  position: absolute;
   width: 100%;
   height: 100%;
   margin: auto;
-  display: inline-block;
-  position: relative;
+  //display: inline-block;
+  //position: relative;
   top: 0;
   background-size: cover;
 }
@@ -157,7 +180,7 @@ section {
                   left bottom,
                   color-stop(0%, #252627),
                   color-stop(100%, #252627));
-  padding: 5% 6%;
+  //padding: 5% 6%;
   color: #ebebeb;
   font-family: Nunito;
 }
@@ -262,4 +285,30 @@ section {
   transform: scale(0.714);
   width: 140%;
   z-index: 1;
+}
+
+
+.cd-section {
+  height: 100vh;
+}
+.cd-section h2 {
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2.4rem;
+}
+.cd-section:first-of-type > div {
+  background-color: #2b334f;
+}
+.cd-section:first-of-type > div::before {
+  /* alert -> all scrolling effects are not visible on small devices */
+  content: 'Effects not visible on mobile!';
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 20px;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #6a7083;
 }
