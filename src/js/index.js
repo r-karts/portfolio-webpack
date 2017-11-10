@@ -50,16 +50,16 @@ jQuery(document).ready(function($){
 
     function bindEvents(MQ, bool) {
         console.log(MQ);
-      //  if( MQ == 'desktop' && bool) {
+        if( MQ == 'desktop' && bool) {
             //bind the animation to the window scroll event, arrows click and keyboard
             scrollAnimation();
             $(window).on('scroll', scrollAnimation);
 
-        // } else if( MQ == 'mobile' ) {
-        //     //reset and unbind
-        //     resetSectionStyle();
-        //     $(window).off('scroll', scrollAnimation);
-        // }
+        } else if( MQ == 'mobile' ) {
+            //reset and unbind
+            resetSectionStyle();
+            $(window).off('scroll', scrollAnimation);
+        }
     }
 
     function scrollAnimation(){
@@ -77,8 +77,10 @@ jQuery(document).ready(function($){
                 offset = (scrollTop + windowHeight) - (actualBlock.offset().top + actualBlock.height());
             //according to animation type and window scroll, define animation parameters
             var animationValues = setSectionAnimation(offset, windowHeight);
-            if(actualBlock.hasClass("main-section"))
+            if(actualBlock.hasClass("visible"))
             {
+               // mainBottomOffset = actualBlock.offset().top + actualBlock.height();
+                // console.log(mainBottomOffset + " " + scrollTop);
                 console.log(offset);
             }
             transformSection(actualBlock.children('div'), animationValues[0], animationValues[1], animationValues[2], animationValues[3], animationValues[4]);
@@ -100,6 +102,19 @@ jQuery(document).ready(function($){
         }, 0);
     }
 
+
+    function scrollHijacking (event) {
+        // on mouse scroll - check if animate section
+        if (event.originalEvent.detail < 0 || event.originalEvent.wheelDelta > 0) {
+            delta--;
+            ( Math.abs(delta) >= scrollThreshold) && prevSection();
+        } else {
+            delta++;
+            (delta >= scrollThreshold) && nextSection();
+        }
+        return false;
+    }
+
     function resetSectionStyle() {
         //on mobile - remove style applied with jQuery
         sectionsAvailable.children('div').each(function(){
@@ -110,6 +125,16 @@ jQuery(document).ready(function($){
     function deviceType() {
         //detect if desktop/mobile
         return window.getComputedStyle(document.querySelector('body'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, "");
+    }
+
+    function selectAnimation(animationName, middleScroll, direction) {
+        // select section animation - scrollhijacking
+        var animationVisible = 'translateNone',
+            animationTop = 'translateNone',
+            animationBottom = 'translateDown',
+            easing = 'easeInCubic',
+            animDuration = 800;
+        return [animationVisible, animationTop, animationBottom, animDuration, easing];
     }
 
     function setSectionAnimation(sectionOffset, windowHeight ) {
@@ -125,24 +150,24 @@ jQuery(document).ready(function($){
 
             // section entering the viewport
             translateY = (-sectionOffset)*100/windowHeight;
-            // console.log("<= 0 ------ translateY(" + translateY +")" );
+            console.log("<= 0 ------ translateY(" + translateY +")" );
 
         } else if( sectionOffset > 0 && sectionOffset <= windowHeight ) {
             // console.log(sectionOffset + "> 0 &&" + sectionOffset + "<=" + windowHeight);
             //section leaving the viewport - still has the '.visible' class
             translateY = 0;
-            // console.log("translateY = 0");
+            console.log("translateY = 0");
 
 
         } else if( sectionOffset < -windowHeight ) {
             // console.log(sectionOffset + " < " +(-windowHeight));
             //section not yet visible
             translateY = 100;
-            // console.log("translateY = 100");
+            console.log("translateY = 100");
 
         } else {
             //section not visible anymore
-            // console.log("else translateY = 0");
+            console.log("else translateY = 0");
             translateY = 0;
         }
 

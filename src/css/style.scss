@@ -23,6 +23,35 @@ html, body, .app {
   margin: 0;
 }
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  background-color: #22283f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body::before {
+  /* never visible - this is used in jQuery to check the current MQ */
+  content: 'mobile';
+  display: none;
+}
+
+@media only screen and (min-width: 1050px) {
+  body::before {
+    /* never visible - this is used in jQuery to check the current MQ */
+    content: 'desktop';
+  }
+}
+
 .app {
   //position: absolute;
 }
@@ -36,31 +65,36 @@ html, body, .app {
   //bottom: 0px;
   //width : 100%;
   //height : 190%;
-  background: url("../img/my_sky.png") 100% 100% no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: url("../img/night-sky.png") 100% 100% repeat;
+  //background-size: cover;
+  //background-position: center;
 
 }
 
 #back {
-  display: none;
+  //display: none;
   //position: absolute;
   background: black;
   width : 100%;
   height : 100%;
   z-index: 100;
+  padding : 4em;
+}
+
+#back p {
+  margin: 2em;
 }
 
 #ground {
-  position: fixed;
-  display : block;
-  bottom: 0;
-  width : 100%;
-  height : 100%;
+  //position: fixed;
+  //display : block;
+  //bottom: 0;
+  //width : 100%;
+  //height : 100%;
   background: url("../img/ground.png") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
-  z-index: 0;
+  //z-index: 0;
 }
 .crop {
   position: fixed;
@@ -250,7 +284,7 @@ section {
 
 }
 
-#section1 img {
+.avatar img {
   width: 200px;
   border-radius: 9999px;
   position: relative;
@@ -286,7 +320,20 @@ section {
   width: 140%;
   z-index: 1;
 }
+.visible {
+  background : green;
+}
+.main-section div {
+  height: 100vh;
+  width: 100vw;
+  background: url("../img/my_sky.png");
+}
 
+/* --------------------------------
+
+Main Components
+
+-------------------------------- */
 
 .cd-section {
   height: 100vh;
@@ -297,7 +344,7 @@ section {
   font-size: 2.4rem;
 }
 .cd-section:first-of-type > div {
-  background-color: #2b334f;
+  //background-color: #2b334f;
 }
 .cd-section:first-of-type > div::before {
   /* alert -> all scrolling effects are not visible on small devices */
@@ -311,4 +358,92 @@ section {
   font-size: 1.3rem;
   text-transform: uppercase;
   color: #6a7083;
+}
+.cd-section:nth-of-type(2)  {
+  //background-color: #2e5367;
+  height: 100vh;
+}
+.cd-section:nth-of-type(2) > div {
+  //background-color: #2e5367;
+  height: 100vh;
+}
+//.cd-section:nth-of-type(3) > div {
+//  background-color: #267481;
+//}
+//.cd-section:nth-of-type(4) > div {
+//  background-color: #fcb052;
+//}
+//.cd-section:nth-of-type(5) > div {
+//  background-color: #f06a59;
+//}
+//[data-animation="fixed"] .cd-section > div {
+//  background-position: center center;
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//}
+//[data-animation="parallax"] .cd-section:first-of-type > div, [data-animation="fixed"] .cd-section:first-of-type > div, [data-animation="opacity"] .cd-section:first-of-type > div {
+//  //background-image: url("../img/img-1.jpg");
+//}
+//[data-animation="parallax"] .cd-section:nth-of-type(2) > div, [data-animation="fixed"] .cd-section:nth-of-type(2) > div, [data-animation="opacity"] .cd-section:nth-of-type(2) > div {
+//  //background-image: url("../img/img-2.jpg");
+//}
+
+@media only screen and (min-width: 1050px) {
+  .cd-section h2 {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+
+  //[data-hijacking="off"] .cd-section > div {
+  //  opacity: 0;
+  //}
+
+}
+
+@media only screen and (min-width: 1050px) {
+  .cd-section:first-of-type > div::before {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  .cd-section > div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Force Hardware Acceleration */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+.main-section {
+  //height: 200vh;
+  background: url("../img/night-sky.png") 100% 100% repeat;
+  z-index: -2;
+}
+
+.main-section div {
+  z-index: 2;
+  background: url("../img/ground.png") 100% 100% no-repeat;
+  //background-size: cover;
+  background-position: center;
+}
+
+.visible {
+  background: url("../img/night-sky.png") 100% 100% repeat;
+}
+.visible > div {
+  background: url("../img/sun.png") 100% 100% no-repeat;
+}
+
+.last-section > div {
+  background: red;
+  z-index: 3;
+  height: 100vh;
 }
