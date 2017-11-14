@@ -52,23 +52,8 @@ body::before {
   }
 }
 
-.app {
-  //position: absolute;
-}
-
 #sky {
-
-  //position: relative;
-  //display : block;
-  //top: 0px;
-  //left: 0px;
-  //right: 0px;
-  //bottom: 0px;
-  //width : 100%;
-  //height : 190%;
   background: url("../img/night-sky.png") 100% 100% repeat;
-  //background-size: cover;
-  //background-position: center;
 
 }
 
@@ -87,15 +72,9 @@ body::before {
 }
 
 #ground {
-  //position: fixed;
-  //display : block;
-  //bottom: 0;
-  //width : 100%;
-  //height : 100%;
   background: url("../img/ground.png") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
-  //z-index: 0;
 }
 .crop {
   position: fixed;
@@ -122,8 +101,6 @@ body::before {
   width: 100%;
   height: 100%;
   margin: auto;
-  //display: inline-block;
-  //position: relative;
   top: 0;
   background-size: cover;
 }
@@ -161,6 +138,10 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+
+  .visible {
+    display : none;
+  }
 
   .content h1 {
     font-size: 100%;
@@ -297,33 +278,11 @@ Main Components
   color: #6a7083;
 }
 .cd-section:nth-of-type(2)  {
-  //background-color: #2e5367;
   height: 100vh;
 }
 .cd-section:nth-of-type(2) > div {
-  //background-color: #2e5367;
   height: 100vh;
 }
-//.cd-section:nth-of-type(3) > div {
-//  background-color: #267481;
-//}
-//.cd-section:nth-of-type(4) > div {
-//  background-color: #fcb052;
-//}
-//.cd-section:nth-of-type(5) > div {
-//  background-color: #f06a59;
-//}
-//[data-animation="fixed"] .cd-section > div {
-//  background-position: center center;
-//  background-repeat: no-repeat;
-//  background-size: cover;
-//}
-//[data-animation="parallax"] .cd-section:first-of-type > div, [data-animation="fixed"] .cd-section:first-of-type > div, [data-animation="opacity"] .cd-section:first-of-type > div {
-//  //background-image: url("../img/img-1.jpg");
-//}
-//[data-animation="parallax"] .cd-section:nth-of-type(2) > div, [data-animation="fixed"] .cd-section:nth-of-type(2) > div, [data-animation="opacity"] .cd-section:nth-of-type(2) > div {
-//  //background-image: url("../img/img-2.jpg");
-//}
 
 @media only screen and (min-width: 1050px) {
   .cd-section h2 {
@@ -331,18 +290,17 @@ Main Components
     font-weight: 300;
   }
 
-  //[data-hijacking="off"] .cd-section > div {
-  //  opacity: 0;
-  //}
-
 }
 
 @media only screen and (min-width: 1050px) {
+
+}
+@media only screen and (min-width: 1050px) {
+
   .cd-section:first-of-type > div::before {
     display: none;
   }
-}
-@media only screen and (min-width: 1050px) {
+
   .cd-section > div {
     position: fixed;
     top: 0;
