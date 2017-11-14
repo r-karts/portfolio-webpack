@@ -17,7 +17,6 @@ $(".sun").click(function () {
 
 window.onscroll = function () {
     scrolling();
-    scrollingToBottom();
 };
 
 function scrolling() {
