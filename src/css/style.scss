@@ -19,7 +19,7 @@ html, body, .app {
   font-size: $font-size;
   width: 100%;
   height: 100%;
-  padding : 0;
+  padding: 0;
   margin: 0;
 }
 
@@ -39,6 +39,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body::before {
   /* never visible - this is used in jQuery to check the current MQ */
   content: 'mobile';
@@ -58,17 +59,15 @@ body::before {
 }
 
 #back {
-  //display: none;
-  //position: absolute;
   background: black;
-  width : 100%;
-  height : 100%;
+  width: 100%;
+  height: 100%;
   z-index: 100;
-  padding : 4em;
-}
+  padding: 4em;
 
-#back p {
-  margin: 2em;
+  p {
+    margin: 2em;
+  }
 }
 
 #ground {
@@ -76,24 +75,25 @@ body::before {
   background-size: cover;
   background-position: center;
 }
+
 .crop {
   position: fixed;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-}
 
-.crop img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 50%;
-  min-height: 50%;
-  filter: grayscale(100%) contrast(150%);
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+    filter: grayscale(100%) contrast(150%);
+  }
 }
 
 .tile {
@@ -110,10 +110,6 @@ body::before {
   margin-top: 90px;
   width: 100%;
   max-width: none;
-}
-
-.tile {
-  position: absolute;
 }
 
 .content {
@@ -139,9 +135,16 @@ p {
 
 @media screen and (max-width: 768px) {
 
-  //.visible {
-  //  display : none;
-  //}
+  .visible {
+    display: none;
+  }
+
+  .cd-section {
+    div {
+      line-height: inherit;
+    }
+  }
+
 
   .content h1 {
     font-size: 100%;
@@ -191,7 +194,7 @@ section {
 }
 
 #section1 {
-  display : none;
+  display: none;
 
   img {
     width: 200px;
@@ -200,13 +203,6 @@ section {
     z-index: 2;
   }
 
-}
-
-.avatar img {
-  width: 200px;
-  border-radius: 9999px;
-  position: relative;
-  z-index: 2;
 }
 
 @keyframes pulse {
@@ -220,6 +216,13 @@ section {
   height: 200px;
   position: relative;
   width: 200px;
+
+  img {
+    width: 200px;
+    border-radius: 9999px;
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .avatar::before,
@@ -238,14 +241,6 @@ section {
   width: 140%;
   z-index: 1;
 }
-.visible {
-  background : green;
-}
-.main-section div {
-  height: 100vh;
-  width: 100vw;
-  background: url("../img/my_sky.jpg");
-}
 
 /* --------------------------------
 
@@ -255,33 +250,23 @@ Main Components
 
 .cd-section {
   height: 100vh;
+
+ > div {
+    height: 100vh;
+  }
+
+  h2 {
+    //line-height: 100vh;
+    text-align: center;
+    font-size: 2.4rem;
+  }
 }
-.cd-section h2 {
-  line-height: 100vh;
-  text-align: center;
-  font-size: 2.4rem;
-}
-.cd-section:first-of-type > div {
-  //background-color: #2b334f;
-}
-.cd-section:first-of-type > div::before {
-  /* alert -> all scrolling effects are not visible on small devices */
-  content: 'Effects not visible on mobile!';
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 20px;
-  z-index: 2;
-  font-weight: bold;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  color: #6a7083;
-}
-.cd-section:nth-of-type(2)  {
-  height: 100vh;
-}
-.cd-section:nth-of-type(2) > div {
-  height: 100vh;
+
+.cd-section:nth-of-type(2) {
+  //height: 100vh;
+  div {
+    height: 100vh;
+  }
 }
 
 @media only screen and (min-width: 1050px) {
@@ -292,9 +277,6 @@ Main Components
 
 }
 
-@media only screen and (min-width: 1050px) {
-
-}
 @media only screen and (min-width: 1050px) {
 
   .cd-section:first-of-type > div::before {
@@ -321,20 +303,20 @@ Main Components
   //height: 200vh;
   background: url("../img/night-sky.png") 100% 100% repeat;
   z-index: -2;
-}
 
-.main-section div {
-  z-index: 2;
-  background: url("../img/ground.png") 100% 100% no-repeat;
-  //background-size: cover;
-  background-position: center;
+  div {
+    z-index: 2;
+    background: url("../img/ground.png") 100% 100% no-repeat;
+    //background-size: cover;
+    background-position: center;
+  }
 }
 
 .visible {
   background: url("../img/night-sky.png") 100% 100% repeat;
-}
-.visible > div {
-  background: url("../img/sun.png") 100% 100% no-repeat;
+  div {
+    background: url("../img/sun.png") 100% 100% no-repeat;
+  }
 }
 
 .last-section > div {
