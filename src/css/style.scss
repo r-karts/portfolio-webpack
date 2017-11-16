@@ -51,17 +51,27 @@ body {
 
 #st-control-1, #st-control-1 + a {
   left: 0;
-  width: 33.33%;
+  width: 20%;
 }
 
 #st-control-2, #st-control-2 + a {
-  width: 33.33%;
-  left: 33.33%;
+  width: 20%;
+  left: 20%;
 }
 
 #st-control-3, #st-control-3 + a {
-  width: 33.33%;
-  left: 66.66%;
+  width: 20%;
+  left: 40%;
+}
+
+#st-control-4, #st-control-4 + a {
+  width: 20%;
+  left: 60%;
+}
+
+#st-control-5, #st-control-5 + a {
+  width: 20%;
+  left: 80%;
 }
 
 .st-container > input:checked + a,
@@ -104,7 +114,6 @@ body {
   left: 0;
   transition: all 0.6s ease-in-out;
 
-  /* Let's enforce some hardware acceleration */
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
 }
@@ -126,6 +135,13 @@ body {
   transform: translateY(-200%);
 }
 
+#st-control-4:checked ~ .st-scroll {
+  transform: translateY(-300%);
+}
+
+#st-control-5:checked ~ .st-scroll {
+  transform: translateY(-400%);
+}
 
 .st-deco {
   width: 200px;
@@ -156,12 +172,13 @@ body {
 }
 
 .st-panel {
-  h2, h3 {
+
+  h1, h2, h3 {
     color: #ff2e49;
     text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
     position: absolute;
-    font-size: 34px;
-    font-weight: 600;
+    font-weight: 800;
+    font-family: Oxygen;
     width: 80%;
     left: 10%;
     text-align: center;
@@ -171,16 +188,26 @@ body {
     top: 50%;
     -webkit-backface-visibility: hidden;
   }
-  img {
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
+  h2,h3 {
+    font-size: 44px;
   }
+  h1 {
+    font-size: 64px;
+  }
+
+}
+
+#st-panel-1 img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
 }
 
 #st-control-1:checked ~ .st-scroll #st-panel-1 h2,
 #st-control-2:checked ~ .st-scroll #st-panel-2 h2,
-#st-control-3:checked ~ .st-scroll #st-panel-3 h2 {
+#st-control-3:checked ~ .st-scroll #st-panel-3 h2,
+#st-control-3:checked ~ .st-scroll #st-panel-4 h2,
+#st-control-3:checked ~ .st-scroll #st-panel-5 h2{
   animation: moveDown 0.6s ease-in-out 0.2s backwards;
 }
 
@@ -214,7 +241,9 @@ body {
 
 #st-control-1:checked ~ .st-scroll #st-panel-1 p,
 #st-control-2:checked ~ .st-scroll #st-panel-2 p,
-#st-control-3:checked ~ .st-scroll #st-panel-3 p {
+#st-control-3:checked ~ .st-scroll #st-panel-3 p,
+#st-control-3:checked ~ .st-scroll #st-panel-4 p,
+#st-control-3:checked ~ .st-scroll #st-panel-5 p,{
   animation: moveUp 0.6s ease-in-out 0.2s backwards;
 }
 
@@ -288,14 +317,21 @@ body {
 }
 
 #st-panel-2 {
+
+    background: url("../img/laptop.jpg") 100% 100% no-repeat;
+    background-position: center;
+
+
   h2 {
     top: 33%;
+    color : white;
   }
   h3 {
     top: 50%
   }
   p {
     top: 30%;
+    color : white;
   }
 }
 
