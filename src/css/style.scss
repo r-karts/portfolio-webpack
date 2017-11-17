@@ -237,13 +237,37 @@ body {
     margin: 10px 0 0 0;
     -webkit-backface-visibility: hidden;
   }
+  li {
+    list-style-type: none;
+    text-align: left;
+    margin-left: 38%;
+    font-size: 16px;
+    color: #8b8b8b;
+    -webkit-backface-visibility: hidden;
+    span {
+      margin-left: 5px;
+      font-size: 26px;
+      //line-height: 32px;
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+  ul {
+    position: absolute;
+    z-index: 2;
+    padding: 0;
+    width: 50%;
+    left: 25%;
+    top: 50%;
+
+  }
 }
 
 #st-control-1:checked ~ .st-scroll #st-panel-1 p,
 #st-control-2:checked ~ .st-scroll #st-panel-2 p,
 #st-control-3:checked ~ .st-scroll #st-panel-3 p,
 #st-control-3:checked ~ .st-scroll #st-panel-4 p,
-#st-control-3:checked ~ .st-scroll #st-panel-5 p,{
+#st-control-3:checked ~ .st-scroll #st-panel-5 p {
   animation: moveUp 0.6s ease-in-out 0.2s backwards;
 }
 
@@ -331,6 +355,14 @@ body {
   }
   p {
     top: 30%;
+    color : white;
+  }
+}
+
+#st-panel-4 {
+  background: url("../img/travel.jpg") 100% 100% no-repeat;
+  background-position: center;
+  p {
     color : white;
   }
 }
