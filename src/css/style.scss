@@ -188,7 +188,7 @@ body {
     top: 50%;
     -webkit-backface-visibility: hidden;
   }
-  h2,h3 {
+  h2, h3 {
     font-size: 44px;
   }
   h1 {
@@ -207,7 +207,7 @@ body {
 #st-control-2:checked ~ .st-scroll #st-panel-2 h2,
 #st-control-3:checked ~ .st-scroll #st-panel-3 h2,
 #st-control-3:checked ~ .st-scroll #st-panel-4 h2,
-#st-control-3:checked ~ .st-scroll #st-panel-5 h2{
+#st-control-3:checked ~ .st-scroll #st-panel-5 h2 {
   animation: moveDown 0.6s ease-in-out 0.2s backwards;
 }
 
@@ -223,16 +223,16 @@ body {
 }
 
 .st-panel {
-  i{
-  font-size:58px;
-  color:#ff2e49;
+  i {
+    font-size: 58px;
+    color: #ff2e49;
 
   }
   p {
     position: absolute;
     text-align: center;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 2vw;
+    line-height: 2vw;
     color: #8b8b8b;
     z-index: 2;
     padding: 0;
@@ -255,7 +255,7 @@ body {
       //line-height: 32px;
       vertical-align: middle;
       text-align: center;
-      color : #ff2e49;
+      color: #ff2e49;
     }
   }
   ul {
@@ -328,7 +328,7 @@ body {
     text-align: center;
     width: 80%;
     margin: 0;
-    padding : 0;
+    padding: 0;
   }
   ul {
     position: absolute;
@@ -336,32 +336,32 @@ body {
     width: 80%;
     left: 18%;
     margin: 0;
-    padding : 0;
+    padding: 0;
     text-align: center;
   }
 }
 
 .st-color p {
   color: rgba(54, 52, 49, 0.8);
-  font-weight: 800;
 }
 
 #st-panel-2 {
 
-    background: url("../img/laptop.jpg") 100% 100% no-repeat;
-    background-position: center;
+  background: url("../img/laptop.jpg") 100% 100% no-repeat;
+  background-position: center;
   background-size: cover;
 
   h2 {
     top: 33%;
-    color : white;
+    color: white;
   }
   h3 {
     top: 50%
   }
   p {
     top: 30%;
-    color : white;
+    color: white;
+    font-size: 2vw;
   }
 }
 
@@ -370,7 +370,7 @@ body {
   background-position: center;
   background-size: cover;
   p {
-    color : white;
+    color: white;
   }
 }
 
@@ -385,28 +385,23 @@ body {
   }
   .content {
     position: relative;
-    width : 50%;
+    width: 50%;
     p {
       position: relative;
-        font-family: Oxygen;
-        font-size: 90%;
+      font-family: Oxygen;
+      font-size: 2vw;
     }
   }
   .fa {
-    font-size: 25px;
-    color : #ff2e49;
+    font-size: 3vw;
+    color: #ff2e49;
   }
 }
+
 @media screen and (max-width: 520px) {
   .st-panel h2 {
     font-size: 42px;
   }
- .fa {
-
-     //font-size: 15px;
-     //color: #ff2e49;
-
- }
 
   .st-panel p {
     width: 90%;
