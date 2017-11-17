@@ -277,8 +277,40 @@ body {
   animation: moveUp 0.6s ease-in-out 0.2s backwards;
 }
 
-#st-control-2:checked ~ .st-scroll .skills li {
+#st-control-3:checked ~ .st-scroll #st-panel-3 .wrap-content {
   animation: moveLeft 0.6s ease-in-out 0.2s backwards;
+}
+
+#st-control-3:checked ~ .st-scroll #st-panel-3 .wrap-span .firt-part-h2 {
+  animation: moveLeftH2 1.2s ease-in-out 1.2s backwards;
+}
+#st-control-3:checked ~ .st-scroll #st-panel-3 .wrap-span .last-part-h2 {
+  animation: moveRightH2 1.2s ease-in-out 1.2s backwards;
+}
+
+@keyframes moveLeftH2 {
+  0% {
+    transform: translate(12vw, 4vh);
+  }
+  50% {
+    transform: translate(0px, 4vh);
+    animation-delay: 0.2s;
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes moveRightH2 {
+  0% {
+    transform: translate(-12vw, -4vh);
+  }
+  50% {
+    transform: translate(0px, -4vh);
+    animation-delay: 0.2s;
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 
 @keyframes moveUp {
@@ -294,7 +326,7 @@ body {
 
 @keyframes moveLeft {
   0% {
-    transform: translateX(-80px);
+    transform: translateX(100%);
     opacity: 0;
   }
   100% {
@@ -363,6 +395,91 @@ body {
     color: white;
     font-size: 2vw;
   }
+}
+
+#st-panel-3 {
+  background: url("../img/web.jpg") 100% 100% no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  p {
+    //background: -webkit-linear-gradient(left, #FF5151, #000, #000, #000);
+    //background: linear-gradient(left, #FF5151, #000, #000, #000);
+    color: #171717;
+    //-webkit-background-clip: text;
+    //-webkit-text-fill-color: transparent;
+    line-height: 3vw;
+    font-size: 3vw;
+    width: 100%;
+    left: 4%;
+    top: 45%;
+  }
+
+  h2 {
+    color: #ff2e49;
+  }
+
+  .wrap-content {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5151+0,ff5151+100&0.5+0,0.5+100 */
+    background: -moz-linear-gradient(to right, rgba(202, 0, 26, 0.7) 0%, rgba(255, 0, 33, 0.7) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(to right, rgba(202, 0, 26, 0.7) 0%, rgba(255, 0, 33, 0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(202, 0, 26, 0.7) 0%, rgba(255, 0, 33, 0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80ff5151', endColorstr='#80ff5151', GradientType=1); /* IE6-9 */
+  }
+
+  .wrap-h2 {
+    //padding: 100px;
+    width: 25vw;
+    height: 20vh;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    .wrap-span {
+      overflow: hidden;
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      text-align: center;
+      white-space: nowrap;
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -0.25em; /* Adjusts for spacing */
+      }
+
+      &:last-child {
+        right: 0;
+      }
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        font-size: 6vw;
+      }
+      &:first-child {
+        text-align: right;
+        color: #ff2e49;
+
+      }
+      &:last-child {
+        text-align: left;
+        color: #242424;
+      }
+    }
+  }
+
+  .left-side-h2 {
+    left: -64px;
+    color: #242424;
+  }
+
 }
 
 #st-panel-4 {
