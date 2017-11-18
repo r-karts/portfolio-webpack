@@ -284,6 +284,7 @@ body {
 #st-control-3:checked ~ .st-scroll #st-panel-3 .wrap-span .firt-part-h2 {
   animation: moveLeftH2 1.2s ease-in-out 1.2s backwards;
 }
+
 #st-control-3:checked ~ .st-scroll #st-panel-3 .wrap-span .last-part-h2 {
   animation: moveRightH2 1.2s ease-in-out 1.2s backwards;
 }
@@ -300,6 +301,7 @@ body {
     transform: translate(0px, 0px);
   }
 }
+
 @keyframes moveRightH2 {
   0% {
     transform: translate(-12vw, -4vh);
@@ -391,9 +393,12 @@ body {
     top: 50%
   }
   p {
-    top: 30%;
+    font-size: calc(1.7em + 1vw);
+    line-height: calc(1.5em + 1vw);
+    top: 35vh;
+    width: 70vw;
+    left: 15vw;
     color: white;
-    font-size: 2vw;
   }
 }
 
@@ -486,7 +491,15 @@ body {
   background: url("../img/travel.jpg") 100% 100% no-repeat;
   background-position: center;
   background-size: cover;
+  h2 {
+    top: 33%;
+  }
   p {
+    font-size: calc(1.7em + 1vw);
+    line-height: calc(1.5em + 1vw);
+    top: 35vh;
+    width: 70vw;
+    left: 15vw;
     color: white;
   }
 }
@@ -496,21 +509,20 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
+  p {
+    font-size: calc(1.7em + 1vw);
+    line-height: calc(1.5em + 1vw);
+    top: 35vh;
+    width: 80vw;
+    left: 10vw;
+  }
   h2 {
     top: 35%;
   }
-  .content {
-    position: relative;
-    width: 50%;
-    p {
-      position: relative;
-      font-family: Oxygen;
-      font-size: 2vw;
-    }
-  }
+
   .fa {
-    font-size: 3vw;
+    font-size: calc(1.7em + 1vw);
+    line-height: calc(1.5em + 1vw);
     color: #ff2e49;
   }
 }
@@ -528,6 +540,11 @@ body {
 
   .st-container > a {
     font-size: 13px;
+  }
+
+  #st-panel-5 p {
+    font-size: calc(1.0em + 1vw);
+    line-height: calc(1.0em + 1vw);
   }
 }
 
