@@ -381,6 +381,56 @@ body {
   color: rgba(54, 52, 49, 0.8);
 }
 
+#st-panel-1 {
+  background: url("../img/welcome.jpg") 100% 100% no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  p {
+    top : 10%;
+    left: 10%;
+    width: auto;
+  }
+  .avatar-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: #242424;
+
+
+      h1 {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        font-size: calc(4vh + 15vw);
+        line-height: calc(4vh + 15vw);
+        font-family: 'Open Sans Condensed', sans-serif;
+        color: white;
+        z-index: 1;
+        left: inherit;
+        top: 0;
+        right: 0;
+        width: auto;
+        img {
+  display: inline-block;
+          position: absolute;
+          width: 130px;
+          height: 130px;
+          border: 0;
+          border-radius: 0;
+          margin: 0;
+          padding: 0;
+          top: 0;
+          left: 0;
+          transform: translateY(-70%) translateX(-59%);
+        }
+      }
+
+  }
+
+}
+
 #st-panel-2 {
 
   background: url("../img/laptop.jpg") 100% 100% no-repeat;
@@ -390,6 +440,8 @@ body {
   h2 {
     top: 33%;
     color: white;
+    text-shadow: 0px 0px 10px #000000;
+
   }
   h3 {
     top: 50%
