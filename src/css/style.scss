@@ -178,7 +178,7 @@ body {
     text-shadow: 1px 1px 1px rgba(151, 24, 64, 0.2);
     position: absolute;
     font-weight: 800;
-    font-family: Oxygen;
+    font-family: Arimo;
     width: 80%;
     left: 10%;
     text-align: center;
@@ -233,6 +233,7 @@ body {
     text-align: center;
     font-size: 2vw;
     line-height: 2vw;
+    font-family: 'Roboto Condensed', sans-serif;
     color: #8b8b8b;
     z-index: 2;
     padding: 0;
@@ -354,6 +355,7 @@ body {
   h2, h3 {
     color: #363431;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    font-family: 'Arimo', sans-serif;
   }
   li {
     font-weight: 300;
@@ -399,6 +401,7 @@ body {
     width: 70vw;
     left: 15vw;
     color: white;
+    text-shadow: 0px 0px 10px #000000;
   }
 }
 
@@ -408,13 +411,10 @@ body {
   background-size: cover;
 
   p {
-    //background: -webkit-linear-gradient(left, #FF5151, #000, #000, #000);
-    //background: linear-gradient(left, #FF5151, #000, #000, #000);
     color: #171717;
-    //-webkit-background-clip: text;
-    //-webkit-text-fill-color: transparent;
     font-size: calc(1.0em + 1vw);
     line-height: calc(1.0em + 1vw);
+    font-weight: 600;
     width: 90%;
     left: 5%;
     top: 45%;
@@ -438,11 +438,11 @@ body {
 
   .wrap-h2 {
     //padding: 100px;
-    width: 25vw;
-    height: 20vh;
+    width: 50vw;
+    height: 30vh;
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 13%;
     transform: translateX(-50%);
     .wrap-span {
       overflow: hidden;
@@ -466,7 +466,7 @@ body {
         display: inline-block;
         vertical-align: middle;
         width: 100%;
-        font-size: 6vw;
+        font-size: calc(1.7em + 3vw);
       }
       &:first-child {
         text-align: right;
@@ -500,6 +500,7 @@ body {
     width: 70vw;
     left: 15vw;
     color: white;
+    text-shadow: 0px 0px 10px #000000;
   }
 }
 
@@ -520,8 +521,8 @@ body {
   }
 
   .fa {
-    font-size: calc(1.7em + 1vw);
-    line-height: calc(1.5em + 1vw);
+    font-size: calc(0.7em + 1vw);
+    line-height: calc(1.0em + 1vw);
     color: #ff2e49;
   }
 }
