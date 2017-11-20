@@ -1,2 +1,12 @@
-runtime: custom
-env: flex
+runtime: go
+api_version: go1.6
+
+handlers:
+- url: /.*
+  script: _go_app
+
+skip_files:
+- node_modules/
+- .idea/
+- src/
+- .git/
